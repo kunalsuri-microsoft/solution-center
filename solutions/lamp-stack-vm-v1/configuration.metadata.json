@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent":  { "$ref": "../resources/LampStackResources.json/overviewContent" },
+    "overviewContent":  "../resources/LampStackResources.json/overviewContent" ,
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
