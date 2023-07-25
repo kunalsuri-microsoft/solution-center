@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent":  "../content/StringResources.json#/overviewContent" ,
+    "overviewContent":  "$SR.overviewContent" ,
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
@@ -76,17 +76,17 @@
     "configurations": [
         {
             "id": "lampstack-base",
-            "title": "Dev/Test instance",
-            "subTitle": "A starter solution for quick setup with low-scale.",
+            "title": "$SR.configurations.lampstack-base.title",
+            "subTitle": "$SR.configurations.lampstack-base.subTitle",
             "cost": {
                 "value": 110,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly"
+                "currency": "$SR.configurations.lampstack-base.cost.currency",
+                "type": "$SR.configurations.lampstack-base.cost.type",
+                "cadence": "$SR.configurations.lampstack-base.cost.cadence"
             },
             "maintenance": {
                 "score": 1,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+                "tooltip": "$SR.configurations.lampstack-base.maintenance.tooltip"
             },
             "templateFileName": "azuredeploy-minimal.json",
             "uiDefinitionFileName": "uiformdefinition.json",

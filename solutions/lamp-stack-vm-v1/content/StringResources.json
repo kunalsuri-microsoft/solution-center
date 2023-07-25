@@ -1,4 +1,40 @@
 {
     "overviewContent":"This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
-    "configurationsTitle": ""
+    "configurations": {
+        "lampstack-base": {
+            "title": "Dev/Test instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmssCompute": {
+                    "one": "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 nodes",
+                    "two": "256 GiB SSD per node",
+                    "three": "Requires only 2 VM cores",
+                    "four": "Works with free trial subscriptions"
+                },
+                "storagePivot": {
+                    "one": "64 GiB Premium Files LSR"
+                },
+                "databasePivot": {
+                    "one": "2 V-Core 125GB MySQL Database"
+                },
+                "cachingPivot": {
+                    "one": "N/A"
+                },
+            }
+        },
+        "lampstack-s2m": {
+
+        },
+        "lampstack-large": {
+
+        }
+    }
 }
