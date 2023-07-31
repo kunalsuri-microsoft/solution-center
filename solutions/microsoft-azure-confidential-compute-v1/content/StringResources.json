@@ -1,0 +1,66 @@
+{
+    "overviewContent": "Azure today provides powerful controls around protecting data at rest and data in transit. Aligned with the Confidential Computing Consortium (CCC) definition, Azure confidential computing protects data in use using hardware-based Trusted Execution Environments (TEEs), which provides customers hardware-backed security protection of code execution and data. Azure confidential VMs are designed to offer a new, hardware-based TEE leveraging SEV-SNP, which hardens guest protections to deny the hypervisor and other host management code access to VM memory and state, protecting against operator access.  Customers in regulated industries such as banking, healthcare, and public sector, can easily migrate their legacy workloads from on-prem environments to the cloud with minimal performance impact and without code changes by leveraging Azure confidential VMs(DCasv5/ECasv5).",
+    "configurations": {
+        "DevTestVM": {
+            "title": "Confidential dev/test virtual machine",
+            "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
+            "cost": {
+                "type": "score"
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "Confidential virtual machine",
+                    "pointTwo": "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
+                    "pointThree": "Standard_DC2as_v5 - 2 vcpu, 8 GiB memory",
+                    "pointFour": "Confidential compute encryption disabled"
+                },
+                "disks": {
+                    "pointOne": "32 GiB / Premium SSD LRS",
+                    "pointTwo": "No disk encryption"
+                }
+            }
+        },
+        "ProdVM": {
+            "title": "Confidential production ready virtual machines",
+            "subTitle": "Deploy multiple virtual machines protected against advanced and persistent attack techniques.",
+            "cost": {
+                "type": "score"
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "Confidential virtual machine",
+                    "pointTwo": "Ubuntu Server 20.04 LTS (Confidential VM preview) Gen 2 image",
+                    "pointThree": "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
+                    "pointFour": "Confidential compute encryption enabled"
+                },
+                "disks": {
+                    "pointOne": "32 GiB / Premium SSD LRS",
+                    "pointTwo": "Platform-managed key"
+                }
+            }
+        },
+        "ProdVMSS": {
+            "title": "Confidential production ready VMSS",
+            "subTitle": "Deploy a Virtual Machine Scale Set (VMSS) of virtual machines protected against advanced and persistent attack techniques.",
+            "cost": {
+                "type": "score"
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "Confidential virtual machines within a flexible VM scale set for maximum scaling",
+                    "pointTwo": "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
+                    "pointThree": "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
+                    "pointFour": "Confidential compute encryption unavailable"
+                },
+                "virtualMachineScaleSet": {
+                    "pointOne": "Flexible scale set used for load balancing against the virtual machine instances",
+                    "pointTwo": "Autoscaler enabled with a minimum instance count of 2"
+                },
+                "disks": {
+                    "pointOne": "32 GiB Premium SSD LRS",
+                    "pointTwo": "Disk encryption unavailable"
+                }
+            }
+        }
+    }
+}

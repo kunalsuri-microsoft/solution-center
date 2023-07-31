@@ -1,5 +1,5 @@
 {
-    "overviewContent": "Azure regions and availability zones are designed to help you achieve resiliency and reliability for your business-critical workloads. Azure maintains multiple geographies. These discrete demarcations define disaster recovery and data residency boundaries across one or multiple Azure regions. Maintaining many regions ensures customers are supported across the world.",
+    "overviewContent": "$SR.overviewContent",
     "associatedResources": [
         {
             "resourceName": "Public IP address",
@@ -40,61 +40,61 @@
     "pivots": [
         {
             "name": "virtualMachine",
-            "displayName": "Virtual machines"
+            "displayName": "$SR.pivots.virtualMachine"
         },
         {
             "name": "loadBalancer",
-            "displayName": "Load balancer"
+            "displayName": "$SR.pivots.loadBalancer"
         },
         {
             "name": "appGateway",
-            "displayName": "App gateway"
+            "displayName": "$SR.pivots.appGateway"
         }
     ],
     "documentationPath": "/sampledocs.md",
     "options": [
         {
             "id": "Basic",
-            "title": "Basic - without outbound traffic",
-            "subTitle": "Best for customers looking to get started with high availability.",
+            "title": "$SR.options.Basic.title",
+            "subTitle": "$SR.options.Basic.subTitle",
             "cost": {
                 "value": "20",
                 "score": 1,
-                "currency": "USD"
+                "currency": "$SR.options.Basic.cost.currency"
             },
             "maintenanceScore": 1,
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "2 E series VMs",
-                        "1 availablility zone"
+                        "$SR.options.Basic.pivotValues.virtualMachine.pointOne",
+                        "$SR.options.Basic.pivotValues.virtualMachine.pointTwo"
                     ]
                 },
                 {
                     "pivotName": "loadBalancer",
                     "content": [
-                        "Enabled by default for Level 4 load balancing"
+                        "$SR.options.Basic.pivotValues.loadBalancer.pointOne"
                     ]
                 }
             ]
         },
         {
             "id": "Intermediate",
-            "title": "Intermediate - with outbound traffic",
-            "subTitle": "Best for customers with workloads supporting up to 1,000 concurrent users.",
+            "title": "$SR.options.Intermediate.title",
+            "subTitle": "$SR.options.Intermediate.subTitle",
             "cost": {
                 "value": "40",
                 "score": 2,
-                "currency": "USD"
+                "currency": "$SR.options.Intermediate.cost.currency"
             },
             "maintenanceScore": 1,
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "2 D series VMs",
-                        "2 availability zones"
+                        "$SR.options.Intermediate.pivotValues.virtualMachine.pointOne",
+                        "$SR.options.Intermediate.pivotValues.virtualMachine.pointTwo"
                     ]
                 },
                 {
@@ -103,27 +103,27 @@
                 {
                     "pivotName": "appGateway",
                     "content": [
-                        "Enabled for Layer 7 load balancing"
+                        "$SR.options.Intermediate.pivotValues.appGateway.pointOne"
                     ]
                 }
             ]
         },
         {
             "id": "Advanced",
-            "title": "Advanced - with outbound traffic",
-            "subTitle": "Best for customers with production workloads.",
+            "title": "$SR.options.Advanced.title",
+            "subTitle": "$SR.options.Advanced.subTitle",
             "cost": {
                 "value": "40",
                 "score": 3,
-                "currency": "USD"
+                "currency": "$SR.options.Advanced.cost.currency"
             },
             "maintenanceScore": 3,
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "3 E series VMs",
-                        "3 availability zones"
+                        "$SR.options.Advanced.pivotValues.virtualMachine.pointOne",
+                        "$SR.options.Advanced.pivotValues.virtualMachine.pointTwo"
                     ]
                 },
                 {
@@ -132,7 +132,7 @@
                 {
                     "pivotName": "appGateway",
                     "content": [
-                        "Enabled for Layer 7 load balancing"
+                        "$SR.options.Advanced.pivotValues.appGateway.pointOne"
                     ]
                 }
             ]

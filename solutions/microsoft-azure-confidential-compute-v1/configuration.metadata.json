@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Azure today provides powerful controls around protecting data at rest and data in transit. Aligned with the Confidential Computing Consortium (CCC) definition, Azure confidential computing protects data in use using hardware-based Trusted Execution Environments (TEEs), which provides customers hardware-backed security protection of code execution and data. Azure confidential VMs are designed to offer a new, hardware-based TEE leveraging SEV-SNP, which hardens guest protections to deny the hypervisor and other host management code access to VM memory and state, protecting against operator access.  Customers in regulated industries such as banking, healthcare, and public sector, can easily migrate their legacy workloads from on-prem environments to the cloud with minimal performance impact and without code changes by leveraging Azure confidential VMs(DCasv5/ECasv5).",
+    "overviewContent": "$SR.overviewContent",
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
@@ -47,12 +47,12 @@
     "configurations": [
         {
             "id": "DevTestVM",
-            "title": "Confidential dev/test virtual machine",
+            "title": "$SR.overviewContent.configurations.DevTestVM.title",
             "templateFileName": "azuredeploy-devtest.json",
             "uiDefinitionFileName": "accdevtestcreateUiDefinition.json",
-            "subTitle": "Best for testing the security features functionality of a confidential virtual machine.",
+            "subTitle": "$SR.overviewContent.configurations.DevTestVM.subTitle",
             "cost": {
-                "type": "score",
+                "type": "$SR.overviewContent.configurations.DevTestVM.cost.type",
                 "score": 1
             },
             "maintenance": {
@@ -62,29 +62,29 @@
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Confidential virtual machine",
-                        "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC2as_v5 - 2 vcpu, 8 GiB memory",
-                        "Confidential compute encryption disabled"
+                        "$SR.overviewContent.configurations.DevTestVM.pivotValues.virtualMachine.pointOne",
+                        "$SR.overviewContent.configurations.DevTestVM.pivotValues.virtualMachine.pointTwo",
+                        "$SR.overviewContent.configurations.DevTestVM.pivotValues.virtualMachine.pointThree",
+                        "$SR.overviewContent.configurations.DevTestVM.pivotValues.virtualMachine.pointFour"
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "32 GiB / Premium SSD LRS",
-                        "No disk encryption"
+                        "$SR.overviewContent.configurations.DevTestVM.pivotValues.disks.pointOne",
+                        "$SR.overviewContent.configurations.DevTestVM.pivotValues.disks.pointTwo"
                     ]
                 }
             ]
         },
         {
             "id": "ProdVM",
-            "title": "Confidential production ready virtual machines",
-            "subTitle": "Deploy multiple virtual machines protected against advanced and persistent attack techniques.",
+            "title": "$SR.overviewContent.configurations.ProdVM.title",
+            "subTitle": "$SR.overviewContent.configurations.ProdVM.subTitle",
             "templateFileName": "azuredeploy-accloop.json",
             "uiDefinitionFileName": "accloopcreateUiDefinition.json",
             "cost": {
-                "type": "score",
+                "type": "$SR.overviewContent.configurations.ProdVM.cost.type",
                 "score": 2
             },
             "maintenance": {
@@ -94,29 +94,29 @@
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Confidential virtual machine",
-                        "Ubuntu Server 20.04 LTS (Confidential VM preview) Gen 2 image",
-                        "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
-                        "Confidential compute encryption enabled"
+                        "$SR.overviewContent.configurations.ProdVM.pivotValues.virtualMachine.pointOne",
+                        "$SR.overviewContent.configurations.ProdVM.pivotValues.virtualMachine.pointTwo",
+                        "$SR.overviewContent.configurations.ProdVM.pivotValues.virtualMachine.pointThree",
+                        "$SR.overviewContent.configurations.ProdVM.pivotValues.virtualMachine.pointFour"
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "32 GiB / Premium SSD LRS",
-                        "Platform-managed key"
+                        "$SR.overviewContent.configurations.ProdVM.pivotValues.disks.pointOne",
+                        "$SR.overviewContent.configurations.ProdVM.pivotValues.disks.pointTwo"
                     ]
                 }
             ]
         },
         {
             "id": "ProdVMSS",
-            "title": "Confidential production ready VMSS",
-            "subTitle": "Deploy a Virtual Machine Scale Set (VMSS) of virtual machines protected against advanced and persistent attack techniques.",
+            "title": "$SR.overviewContent.configurations.ProdVMSS.title",
+            "subTitle": "$SR.overviewContent.configurations.ProdVMSS.subTitle",
             "templateFileName": "azuredeploy-accvmss.json",
             "uiDefinitionFileName": "accvmsscreateUiDefinition.json",
             "cost": {
-                "type": "score",
+                "type": "$SR.overviewContent.configurations.ProdVMSS.cost.type",
                 "score": 3
             },
             "maintenance": {
@@ -126,24 +126,24 @@
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Confidential virtual machines within a flexible VM scale set for maximum scaling",
-                        "Ubuntu Server 20.04 LTS (Confidential VM preview) - Gen 2 image",
-                        "Standard_DC4ads_v5 - 4 vcpus, 16 GiB memory",
-                        "Confidential compute encryption unavailable"
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.virtualMachine.pointOne",
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.virtualMachine.pointTwo",
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.virtualMachine.pointThree",
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.virtualMachine.pointFour"
                     ]
                 },
                 {
                     "pivotName": "virtualMachineScaleSet",
                     "content": [
-                        "Flexible scale set used for load balancing against the virtual machine instances",
-                        "Autoscaler enabled with a minimum instance count of 2"
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.virtualMachineScaleSet.pointOne",
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.virtualMachineScaleSet.pointTwo"
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "32 GiB Premium SSD LRS",
-                        "Disk encryption unavailable"
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.disks.pointOne",
+                        "$SR.overviewContent.configurations.ProdVMSS.pivotValues.disks.pointTwo"
                     ]
                 }
             ]

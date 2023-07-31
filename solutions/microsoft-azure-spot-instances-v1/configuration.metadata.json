@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Deploy a highly scalable, cost-effective Spot virtual machine scale set for your applications that don't need to be completed within a certain timeframe. Run workloads for development, testing, quality assurance, advanced analytics, big data, machine learning and AI, batch jobs, rendering and transcoding of videos, graphics, and images at a very low cost.",
+    "overviewContent": "$SR.overviewContent",
     "associatedResources": [
         {
             "resourceType": "Microsoft.Network/PublicIpAddresses",
@@ -52,97 +52,97 @@
     "configurations": [
         {
             "id": "noncritical",
-            "title": "Virtual machine for non-critical workloads",
-            "subTitle": "Best for one-time-use applications, proof of concept, and prototyping.",
+            "title": "$SR.configurations.noncritical.title",
+            "subTitle": "$SR.configurations.noncritical.subTitle",
             "templateFileName": "noncritical.json",
             "cost": {
-                "type":"score",
+                "type":"$SR.configurations.noncritical.cost.type",
                 "score": 1
             },
-            "maintenance": { "score": 1, "tooltip": "The relative cost for maintenance of this solution."},
+            "maintenance": { "score": 1, "tooltip": "$SR.configurations.noncritical.maintenance.tooltip"},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Interruptible Spot VM",
-                        "2-core D series (Standard D2s v4)",
-                        "Ubuntu Server 20.04 LTS - Gen 2"
+                        "$SR.configurations.noncritical.pivotValues.virtualMachine.pointOne",
+                        "$SR.configurations.noncritical.pivotValues.virtualMachine.pointTwo",
+                        "$SR.configurations.noncritical.pivotValues.virtualMachine.pointThree"
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "32 GiB"
+                        "$SR.configurations.noncritical.pivotValues.disks.pointOne"
                     ]
                 }
             ]
         },
         {
             "id": "batch",
-            "title": "Virtual machine scale set for batch processing + rendering",
-            "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
+            "title": "$SR.configurations.batch.title",
+            "subTitle": "$SR.configurations.batch.subTitle",
             "templateFileName": "batch.json",
             "cost": {
-                "type":"score",
+                "type":"$SR.configurations.batch.cost.type",
                 "score": 2
             },
-            "maintenance": { "score": 2, "tooltip": "The relative cost for maintenance of this solution."},
+            "maintenance": { "score": 2, "tooltip": "$SR.configurations.batch.maintenance.tooltip"},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Interruptible Spot VM",
-                        "Starts with 2 instances",
-                        "4-core F series VMSS Flex (F8s v2)",
-                        "Ubuntu Server 20.04 LTS - Gen 2"
+                        "$SR.configurations.batch.pivotValues.virtualMachine.pointOne",
+                        "$SR.configurations.batch.pivotValues.virtualMachine.pointTwo",
+                        "$SR.configurations.batch.pivotValues.virtualMachine.pointThree",
+                        "$SR.configurations.batch.pivotValues.virtualMachine.pointFour"
                     ]
                 },
                 {
                     "pivotName": "virtualMachineScaleSet",
                     "content": [
-                        "Flexible scale set with auto-scale enabled"
+                        "$SR.configurations.batch.pivotValues.virtualMachineScaleSet.pointOne"
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "128 GiB"
+                        "$SR.configurations.batch.pivotValues.disks.pointOne"
                     ]
                 }
             ]
         },
         {
             "id": "tryrestore",
-            "title": "Virtual machine scale set with automatic restoration",
-            "subTitle": "Best for scaling workloads expected to run for a longer duration, like big data analytics.",
+            "title": "$SR.configurations.tryrestore.title",
+            "subTitle": "$SR.configurations.tryrestore.subTitle",
             "templateFileName": "tryrestore.json",
             "cost": {
-                "type":"score",
+                "type":"$SR.configurations.tryrestore.cost.type",
                 "score": 2
             },
-            "maintenance": { "score": 3, "tooltip": "The relative cost for maintenance of this solution."},
+            "maintenance": { "score": 3, "tooltip": "$SR.configurations.tryrestore.maintenance.tooltip"},
             "pivotValues": [
                 {
                     "pivotName": "virtualMachine",
                     "content": [
-                        "Interruptible Spot VM",
-                        "Starts with 2 instances",
-                        "8-core D series 32 GiB memory (D8as v4)",
-                        "Ubuntu Server 20.04 LTS - Gen 2",
-                        "Attempts restoration after eviction for 2 hours"
+                        "$SR.configurations.tryrestore.pivotValues.virtualMachine.pointOne",
+                        "$SR.configurations.tryrestore.pivotValues.virtualMachine.pointTwo",
+                        "$SR.configurations.tryrestore.pivotValues.virtualMachine.pointThree",
+                        "$SR.configurations.tryrestore.pivotValues.virtualMachine.pointFour",
+                        "$SR.configurations.tryrestore.pivotValues.virtualMachine.pointFive"
                     ]
                 },
                 {
                     "pivotName": "virtualMachineScaleSet",
                     "content": [
-                        "Uniform virtual machine scale set",
+                        "$SR.configurations.tryrestore.pivotValues.virtualMachineScaleSet.pointOne",
                         ""
                     ]
                 },
                 {
                     "pivotName": "disks",
                     "content": [
-                        "Ephemeral OS disk at no additional cost"
+                        "$SR.configurations.tryrestore.pivotValues.disks.pointOne"
                     ]
                 }
             ]

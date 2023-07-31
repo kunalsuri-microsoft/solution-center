@@ -1,0 +1,74 @@
+{
+    "overviewContent": "Deploy a highly scalable, cost-effective Spot virtual machine scale set for your applications that don't need to be completed within a certain timeframe. Run workloads for development, testing, quality assurance, advanced analytics, big data, machine learning and AI, batch jobs, rendering and transcoding of videos, graphics, and images at a very low cost.",
+    "configurations": {
+        "noncritical": {
+            "title": "Virtual machine for non-critical workloads",
+            "subTitle": "Best for one-time-use applications, proof of concept, and prototyping.",
+            "cost": {
+                "type": "score"
+            },
+            "maintenance": {
+                "tooltip": "The relative cost for maintenance of this solution."
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "Interruptible Spot VM",
+                    "pointTwo": "2-core D series (Standard D2s v4)",
+                    "pointThree": "Ubuntu Server 20.04 LTS - Gen 2"
+                },
+                "disks": {
+                    "pointOne": "32 GiB"
+                }
+            }
+        },
+        "batch": {
+            "title": "Virtual machine scale set for batch processing + rendering",
+            "subTitle": "Best for development or test environments where virtual machine interuption isn't a concern.",
+            "cost": {
+                "type": "score"
+            },
+            "maintenance": {
+                "tooltip": "The relative cost for maintenance of this solution."
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "Interruptible Spot VM",
+                    "pointTwo": "Starts with 2 instances",
+                    "pointThree": "4-core F series VMSS Flex (F8s v2)",
+                    "pointFour": "Ubuntu Server 20.04 LTS - Gen 2"
+                },
+                "virtualMachineScaleSet": {
+                    "pointOne": "Flexible scale set with auto-scale enabled"
+                },
+                "disks": {
+                    "pointOne": "128 GiB"
+                }
+            }
+        },
+        "tryrestore": {
+            "title": "Virtual machine scale set with automatic restoration",
+            "subTitle": "Best for scaling workloads expected to run for a longer duration, like big data analytics.",
+            "cost": {
+                "type": "score"
+            },
+            "maintenance": {
+                "tooltip": "The relative cost for maintenance of this solution."
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "Interruptible Spot VM",
+                    "pointTwo": "Starts with 2 instances",
+                    "pointThree": "8-core D series 32 GiB memory (D8as v4)",
+                    "pointFour": "Ubuntu Server 20.04 LTS - Gen 2",
+                    "pointFive": "Attempts restoration after eviction for 2 hours"
+                },
+                "virtualMachineScaleSet": {
+                    "pointOne": "Uniform virtual machine scale set"
+                },
+                "disks": {
+                    "pointOne": "Ephemeral OS disk at no additional cost"
+                }
+            }
+        }
+    }
+}

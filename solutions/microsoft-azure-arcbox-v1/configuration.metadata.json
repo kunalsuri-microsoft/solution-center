@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Ready to experience managing infrastructure with our hybrid cloud platform? ArcBox provides an easy-to-deploy sandbox for all things Azure Arc. It is completely self-contained within a single subscription and resource group, giving you room to train, demo, test, and explore with a pre-installed set of tools. Note: This is a 2-step deployment process. Please refer to Documentation tab.",
+    "overviewContent": "$SR.overviewContent",
     "documentationFileName": "arcbox-overview.md",
     "associatedResources": [
         {
@@ -17,7 +17,7 @@
         },
         {
             "resourceType": "",
-            "displayName": "Azure Policy",
+            "displayName": "$SR.associatedResources.azurePolicy",
             "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
@@ -34,7 +34,7 @@
         },
         {
             "resourceType": "",
-            "displayName": "Defender for Cloud",
+            "displayName": "$SR.associatedResources.defenderCloud",
             "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
@@ -51,7 +51,7 @@
         },
         {
             "resourceType": "",
-            "displayName": "Azure Monitor",
+            "displayName": "$SR.associatedResources.azureMonitor",
             "type": "Custom",
             "icon": {
                 "iconType": "CustomIcon",
@@ -63,7 +63,7 @@
         {
             "name": "arcServer",
             "type": "Custom",
-            "displayName": "Arc-enabled servers",
+            "displayName": "$SR.pivots.arcServer",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcServer"
@@ -72,7 +72,7 @@
         {
             "name": "arcK8s",
             "type": "Custom",
-            "displayName": "Arc-enabled Kubernetes",
+            "displayName": "$SR.pivots.arcK8s",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcKubernetes"
@@ -81,7 +81,7 @@
         {
             "name": "arcDataServices",
             "type": "Custom",
-            "displayName": "Arc-enabled data services",
+            "displayName": "$SR.pivots.arcDataServices",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcDataServices"
@@ -91,38 +91,38 @@
     "configurations": [
         {
             "id": "Full",
-            "title": "ArcBox Full",
-            "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
+            "title": "$SR.configurations.full.title",
+            "subTitle": "$SR.configurations.full.subTitle",
             "cost": {
                 "value": 112,
                 "score": 3,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "daily"
+                "currency": "$SR.configurations.full.cost.currency",
+                "type": "$SR.configurations.full.cost.type",
+                "cadence": "$SR.configurations.full.cost.cadence"
             },
             "pivotValues": [
                 {
                     "pivotName": "arcServer",
                     "content": [
-                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL Server running on a Windows VM.",
-                        "Enabled using native Azure virtual machines."
+                        "$SR.configurations.full.pivotValues.arcServer.pointOne",
+                        "$SR.configurations.full.pivotValues.arcServer.pointTwo",
+                        "$SR.configurations.full.pivotValues.arcServer.pointThree"
                     ]
                 },
                 {
                     "pivotName": "arcK8s",
                     "content": [
-                        "Single node Rancher K3s cluster",
-                        "3-node Cluster API Kubernetes cluster",
-                        "Includes Container Insights, and Microsoft Defender for Containers"
+                        "$SR.configurations.full.pivotValues.arcK8s.pointOne",
+                        "$SR.configurations.full.pivotValues.arcK8s.pointTwo",
+                        "$SR.configurations.full.pivotValues.arcK8s.pointThree"
                     ]
                 },
                 {
                     "pivotName": "arcDataServices",
                     "content": [
-                        "Azure Arc Data Controller",
-                        "Azure Arc-enabled SQL Managed Instance",
-                        "Azure Arc-enabled PostgreSQL"
+                        "$SR.configurations.full.pivotValues.arcDataServices.pointOne",
+                        "$SR.configurations.full.pivotValues.arcDataServices.pointTwo",
+                        "$SR.configurations.full.pivotValues.arcDataServices.pointThree"
                     ]
                 }
             ],
@@ -141,7 +141,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Policy",
+                    "displayName": "$SR.configurations.full.associatedResources.azurePolicy",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -158,7 +158,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Defender for Cloud",
+                    "displayName": "$SR.configurations.full.associatedResources.defenderCloud",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -175,7 +175,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.full.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -184,7 +184,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled server",
+                    "displayName": "$SR.configurations.full.associatedResources.arcServer",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -193,7 +193,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled SQL Server",
+                    "displayName": "$SR.configurations.full.associatedResources.arcSQLServer",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -202,7 +202,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled Kubernetes",
+                    "displayName": "$SR.configurations.full.associatedResources.arcKubernetes",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -211,7 +211,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc Data Controller",
+                    "displayName": "$SR.configurations.full.associatedResources.arcDataController",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -220,7 +220,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled SQL Managed Instance",
+                    "displayName": "$SR.configurations.full.associatedResources.arcSQLManagedInstance",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -229,7 +229,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled PostgreSQL",
+                    "displayName": "$SR.configurations.full.associatedResources.arcPostgreSQL",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -248,22 +248,22 @@
         },
         {
             "id": "ITPro",
-            "title": "ArcBox for IT Pros",
-            "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
+            "title": "$SR.configurations.itPro.title",
+            "subTitle": "$SR.configurations.itPro.subTitle",
             "cost": {
                 "value": 40,
                 "score": 2,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "daily"
+                "currency": "$SR.configurations.itPro.cost.currency",
+                "type": "$SR.configurations.itPro.cost.type",
+                "cadence": "$SR.configurations.itPro.cost.cadence"
             },
             "pivotValues": [
                 {
                     "pivotName": "arcServer",
                     "content": [
-                        "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
-                        "Includes Arc-enabled SQL Server running on a Windows VM.",
-                        "Enabled using native Azure virtual machines."
+                        "$SR.configurations.itPro.pivotValues.arcServer.pointOne",
+                        "$SR.configurations.itPro.pivotValues.arcServer.pointTwo",
+                        "$SR.configurations.itPro.pivotValues.arcServer.pointThree"
                     ]
                 }
             ],
@@ -282,7 +282,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Policy",
+                    "displayName": "$SR.configurations.itPro.associatedResources.azurePolicy",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -299,7 +299,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Defender for Cloud",
+                    "displayName": "$SR.configurations.itPro.associatedResources.defenderCloud",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -316,7 +316,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.itPro.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -329,7 +329,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled server",
+                    "displayName": "$SR.configurations.itPro.associatedResources.arcServer",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",
@@ -338,7 +338,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Arc-enabled SQL Server",
+                    "displayName": "$SR.configurations.itPro.associatedResources.arcSQLServer",
                     "type": "Custom",
                     "icon": {
                         "iconType": "CustomIcon",

@@ -1,0 +1,58 @@
+{
+    "overviewContent": "Azure regions and availability zones are designed to help you achieve resiliency and reliability for your business-critical workloads. Azure maintains multiple geographies. These discrete demarcations define disaster recovery and data residency boundaries across one or multiple Azure regions. Maintaining many regions ensures customers are supported across the world.",
+    "pivots": {
+        "virtualMachine": "Virtual machines",
+        "loadBalancer": "Load balancer",
+        "appGateway": "App gateway"
+    },
+    "options": {
+        "Basic": {
+            "title": "Basic - without outbound traffic",
+            "subTitle": "Best for customers looking to get started with high availability.",
+            "cost": {
+                "currency": "USD"
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "2 E series VMs",
+                    "pointTwo": "1 availablility zone"
+                },
+                "loadBalancer": {
+                    "pointOne": "Enabled by default for Level 4 load balancing"
+                }
+            }
+        },
+        "Intermediate": {
+            "title": "Intermediate - with outbound traffic",
+            "subTitle": "Best for customers with workloads supporting up to 1,000 concurrent users.",
+            "cost": {
+                "currency": "USD"
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "2 D series VMs",
+                    "pointTwo": "2 availablility zones"
+                },
+                "appGateway": {
+                    "pointOne": "Enabled for Layer 7 load balancing"
+                }
+            }
+        },
+        "Advanced": {
+            "title": "Advanced - with outbound traffic",
+            "subTitle": "Best for customers with production workloads.",
+            "cost": {
+                "currency": "USD"
+            },
+            "pivotValues": {
+                "virtualMachine": {
+                    "pointOne": "3 E series VMs",
+                    "pointTwo": "3 availablility zones"
+                },
+                "appGateway": {
+                    "pointOne": "Enabled for Layer 7 load balancing"
+                }
+            }
+        }
+    }
+}
