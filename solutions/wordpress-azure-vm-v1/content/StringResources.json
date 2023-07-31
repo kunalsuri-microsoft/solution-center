@@ -1,0 +1,94 @@
+{
+    "overviewContent": "This solution deploys an autoscaling web frontend layer (with nginx and PHP-FPM), private Virtual Network for frontend instances, controller VM running cron and handling syslog for the autoscaling cluster, Azure Load balancer to balance across the autoscaling instances, Azure Database for MySQL or Azure Database for PostgreSQL or Azure SQL Database, and Dual GlusterFS nodes or NFS for highly available access to LAMP files.",
+    "configurations": {
+        "wordpress-base": {
+            "title": "Dev/Test instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmssCompute": {
+                    "pointOne": "Small autoscale web front VM sku 2 D1v2 (1 vCPU, 3.5 GB RAM) Scales to a max of 10 nodes",
+                    "pointTwo": "256 GiB SSD per node",
+                    "pointThree": "Requires only 2 VM cores",
+                    "pointFour": "Works with free trial subscriptions"
+                },
+                "storagePivot": {
+                    "pointOne": "64 GiB Premium Files LSR"
+                },
+                "databasePivot": {
+                    "pointOne": "2 V-Core 125GB MySQL Database"
+                },
+                "cachingPivot": {
+                    "pointOne": "N/A"
+                }
+            }
+        },
+        "wordpress-s2m": {
+            "title": "Small to Mid-Size",
+            "subTitle": "Supporting up to 1,000 concurrent users.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmssCompute": {
+                    "pointOne": "Standard_DS2_V2 VM which can scale to 10 nodes VMSS.",
+                    "pointTwo": "256 GiB SSD per node",
+                    "pointThree": "Standard_DS1_v2 controller VM"
+                },
+                "storagePivot": {
+                    "pointOne": "512 GiB Premium Files LSR "
+                },
+                "databasePivot": {
+                    "pointOne": "Gen 5 8 vCore 128 GB Azure PostgresSQL",
+                    "pointTwo": "Backup enabled"
+                },
+                "cachingPivot": {
+                    "pointOne": "N/A"
+                }
+            }
+        },
+        "wordpress-large": {
+            "title": "Full Production Workload",
+            "subTitle": "This maximal deployment will use GlusterFS (in high availability, adding 2 VMs for a GlusterFS cluster), MySQL with the highest SKU, Redis Cache, and pretty large storage sizes (for both data disks and DB).",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmssCompute": {
+                    "pointOne": "Autoscaling Standard_DS2_v2 VMSS.",
+                    "pointTwo": "1024 GiB Local SSD per node",
+                    "pointThree": "Standard_DS1_v2 Controller VM."
+                },
+                "storagePivot": {
+                    "pointOne": "1024 GiB Premium Files LSR",
+                    "pointTwo": "Estimated with 100,000 storage transactions per VM"
+                },
+                "databasePivot": {
+                    "pointOne": "Gen 5 16 vCore 512GB Azure PostgresSQL Database",
+                    "pointTwo": "Backup enabled"
+                },
+                "cachingPivot": {
+                    "pointOne": "Premium tier, 1 Shard per Instance",
+                    "pointTwo": "1 Additional Replica per Shard, 1 P1 instance"
+                }
+            }
+        }
+    }
+}
