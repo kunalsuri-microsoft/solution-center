@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "This solution deploys a web frontend layer, private Virtual Network for frontend instances, Azure Key vault for handling secrets and supporting BYOK scenarios, Azure SQL Managed Instance with different tiers and configuration as per selected solution template.",
+    "overviewContent": "$SR.overviewContent",
     "documentationFileName": "sqlmi-docs.md",
     "associatedResources": [
         {
@@ -14,7 +14,7 @@
         {
             "resourceType": "Microsoft.Sql/managedInstances",
             "type": "AzureResource",
-            "displayName": "Azure SQL Managed Instance"
+            "displayName": "$SR.overviewContent.associatedResources.managedInstances"
         },
         {
             "resourceType": "Microsoft.Network/applicationGateways",
@@ -49,37 +49,41 @@
     "configurations": [
         {
             "id": "base",
-            "title": "Dev/Test instance",
-            "subTitle": "A starter solution for quick setup with low-scale.",
+            "title": "$SR.configurations.base.title",
+            "subTitle": "$SR.configurations.base.subTitle",
             "cost": {
                 "value": 1055,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly"
+                "currency": "$SR.configurations.base.cost.currency",
+                "type": "$SR.configurations.base.cost.type",
+                "cadence": "$SR.configurations.base.cost.cadence"
             },
             "maintenance": {
                 "score": 1,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+                "tooltip": "$SR.configurations.base.maintenance.tooltip"
             },
             "templateFileName": "azuredeploy-minimal.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
                     "content": [
-                        "D4s v3 (4 CPU vCores)"
+                        "$SR.configurations.base.pivotValues.vmCompute.pointOne"
                     ]
                 },
                         
                 {
                     "pivotName": "miPivot",
                     "content": [
-                        "General Purpose", "4 CPU vCores", "20 GB RAM, Standard Series", "32 GB of disk space", "LRS Backup Storage"
+                        "$SR.configurations.base.pivotValues.miPivot.pointOne",
+                        "$SR.configurations.base.pivotValues.miPivot.pointTwo",
+                        "$SR.configurations.base.pivotValues.miPivot.pointThree",
+                        "$SR.configurations.base.pivotValues.miPivot.pointFour",
+                        "$SR.configurations.base.pivotValues.miPivot.pointFive"
                     ]
                 },
                 {
                     "pivotName": "akvPivot",
                     "content": [
-                        "Standard"
+                        "$SR.configurations.base.pivotValues.akvPivot.pointOne"
                     ]
                 }
                 
@@ -87,37 +91,41 @@
         },
         {
             "id": "small to mid-size",
-            "title": "Small to Mid-Size",
-            "subTitle": "Small to Medium-sized production workload, that does not require the highest availability or very high number of concurrent users.",
+            "title": "$SR.configurations.smallMid.title",
+            "subTitle": "$SR.configurations.smallMid.subTitle",
             "cost": {
                 "value": 2125,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly"
+                "currency": "$SR.configurations.smallMid.cost.currency",
+                "type": "$SR.configurations.smallMid.cost.type",
+                "cadence": "$SR.configurations.smallMid.cost.cadence"
             },
             "maintenance": {
                 "score": 2,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+                "tooltip": "$SR.configurations.smallMid.maintenance.tooltip"
             },
             "templateFileName": "azuredeploy-mid.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
                     "content": [
-                        "D8s_v3 (8 CPU vCores)"
+                        "$SR.configurations.smallMid.pivotValues.vmCompute.pointOne"
                     ]
                 },
                         
                 {
                     "pivotName": "miPivot",
                     "content": [
-                        "General Purpose", "8 CPU vCores", "40 GB RAM, Standard Series", "128 GB of disk space", "GRS Backup Storage"
+                        "$SR.configurations.smallMid.pivotValues.miPivot.pointOne",
+                        "$SR.configurations.smallMid.pivotValues.miPivot.pointTwo",
+                        "$SR.configurations.smallMid.pivotValues.miPivot.pointThree",
+                        "$SR.configurations.smallMid.pivotValues.miPivot.pointFour",
+                        "$SR.configurations.smallMid.pivotValues.miPivot.pointFive"
                     ]
                 },
                 {
                     "pivotName": "akvPivot",
                     "content": [
-                        "Standard"
+                        "$SR.configurations.smallMid.pivotValues.akvPivot.pointOne"
                     ]
                 }
                
@@ -125,37 +133,41 @@
         },
         {
             "id": "large",
-            "title": "Full Production Workload",
-            "subTitle": "This deployment will be provide a better configuration for more intensive full production workload with higher number of users and significantly improved response time, while providing Business Critical type high availability.",
+            "title": "$SR.configurations.large.title",
+            "subTitle": "$SR.configurations.large.subTitle",
             "cost": {
                 "value": 5499,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly"
+                "currency": "$SR.configurations.large.cost.currency",
+                "type": "$SR.configurations.large.cost.type",
+                "cadence": "$SR.configurations.large.cost.cadence"
             },
             "maintenance": {
                 "score": 2,
-                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+                "tooltip": "$SR.configurations.large.maintenance.tooltip"
             },
             "templateFileName": "azuredeploy-maximum.json",
             "pivotValues": [
                 {
                     "pivotName": "vmCompute",
                     "content": [
-                        "E16s_v3 (16 CPU vCores)"
+                        "$SR.configurations.large.pivotValues.vmCompute.pointOne"
                     ]
                 },
                         
                 {
                     "pivotName": "miPivot",
                     "content": [
-                        "Business Critical", "8 CPU vCores", "56 GB RAM, Premium Series", "512 GB of disk space", "GRS Backup Storage"
+                        "$SR.configurations.large.pivotValues.miPivot.pointOne",
+                        "$SR.configurations.large.pivotValues.miPivot.pointTwo",
+                        "$SR.configurations.large.pivotValues.miPivot.pointThree",
+                        "$SR.configurations.large.pivotValues.miPivot.pointFour",
+                        "$SR.configurations.large.pivotValues.miPivot.pointFive"
                     ]
                 },    
                 {
                     "pivotName": "akvPivot",
                     "content": [
-                        "Standard"
+                        "$SR.configurations.large.pivotValues.akvPivot.pointOne"
                     ]
                 }
                 

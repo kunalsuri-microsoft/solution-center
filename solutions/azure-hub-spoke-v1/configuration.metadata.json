@@ -1,6 +1,6 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "Hub-spoke is a fundamental networking topology for efficiently managing common connectivity & security requirements. A hub is a central network zone that controls and inspects egress and/or ingress traffic between zones: internet, cross-premises, and spokes.",
+    "overviewContent": "$SR.overviewContent",
     "documentationFileName": "hub-spoke-overview.md",
     "supportsManualConfiguration": false,
     "associatedResources": [],
@@ -8,7 +8,7 @@
         {
             "name": "hubNetwork",
             "type": "Custom",
-            "displayName": "Hub network",
+            "displayName": "$SR.pivots.hubNetwork",
             "azureResourceType": "Microsoft.Network/virtualNetworks",
             "icon": {
                 "iconNumber": 245,
@@ -18,7 +18,7 @@
         {
             "name": "spokeNetworks",
             "type": "Custom",
-            "displayName": "Spoke networks",
+            "displayName": "$SR.pivots.spokeNetworks",
             "azureResourceType": "Microsoft.Network/virtualNetworks",
             "icon": {
                 "iconNumber": 245,
@@ -38,7 +38,7 @@
         {
             "name": "workload",
             "type": "Custom",
-            "displayName": "Example workload",
+            "displayName": "$SR.pivots.workload",
             "azureResourceType": "Microsoft.Compute/virtualMachines",
             "icon": {
                 "iconNumber": 71,
@@ -49,45 +49,45 @@
     "configurations": [
         {
             "id": "base",
-            "title": "Foundational deployment",
-            "subTitle": "A foundational deployment of the hub-spoke topology. It includes core networking components and leaves room to grow into more advanced configurations.",
+            "title": "$SR.configurations.base.title",
+            "subTitle": "$SR.configurations.base.subTitle",
             "cost": {
                 "value": 1200,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+                "currency": "$SR.configurations.base.cost.currency",
+                "type": "$SR.configurations.base.cost.type",
+                "cadence": "$SR.configurations.base.cost.cadence",
+                "tooltip": "$SR.configurations.base.cost.tooltip"
             },
             "maintenance": {
                 "score": 2,
-                "tooltip": "Regional hub networks are usually considered business-critical with significant governance."
+                "tooltip": "$SR.configurations.base.maintenance.tooltip"
             },
             "templateFileName": "base.json",
             "pivotValues": [
                 {
                     "pivotName": "hubNetwork",
                     "content": [
-                        "One regional, hub Virtual Network",
-                        "Dedicated subnets for hub resources",
-                        "Network Security Groups"
+                        "$SR.configurations.base.pivotValues.hubNetwork.pointOne",
+                        "$SR.configurations.base.pivotValues.hubNetwork.pointTwo",
+                        "$SR.configurations.base.pivotValues.hubNetwork.pointThree"
                     ]
                 },
                 {
                     "pivotName": "spokeNetworks",
                     "content": [
-                        "Two spoke Virtual Networks",
-                        "Network Security Groups",
-                        "Bi-directional peering established to/from hub",
-                        "Egress traffic force-tunneled to hub Azure Firewall"
+                        "$SR.configurations.base.pivotValues.spokeNetworks.pointOne",
+                        "$SR.configurations.base.pivotValues.spokeNetworks.pointTwo",
+                        "$SR.configurations.base.pivotValues.spokeNetworks.pointThree",
+                        "$SR.configurations.base.pivotValues.spokeNetworks.pointFour"
                     ]
                 },
                 {
                     "pivotName": "azureFirewall",
                     "content": [
-                        "One regional Azure Firewall (Basic)",
-                        "Multiple public IPs",
-                        "Deployed across Availability Zones",
-                        "Azure Monitor logging"
+                        "$SR.configurations.base.pivotValues.azureFirewall.pointOne",
+                        "$SR.configurations.base.pivotValues.azureFirewall.pointTwo",
+                        "$SR.configurations.base.pivotValues.azureFirewall.pointThree",
+                        "$SR.configurations.base.pivotValues.azureFirewall.pointFour"
                     ]
                 }
             ],
@@ -130,7 +130,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.base.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "FrameworkIcon",
@@ -141,45 +141,45 @@
         },
         {
             "id": "baseWithGateway",
-            "title": "Foundational deployment with VPN Gateway for cross-premises connectivity",
-            "subTitle": "This builds upon the prior configuration with the addition of a VPN Gateway to support on-premises or cross-cloud connectivity.",
+            "title": "$SR.configurations.baseWithGateway.title",
+            "subTitle": "$SR.configurations.baseWithGateway.subTitle",
             "cost": {
                 "value": 1330,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+                "currency": "$SR.configurations.baseWithGateway.cost.currency",
+                "type": "$SR.configurations.baseWithGateway.cost.type",
+                "cadence": "$SR.configurations.baseWithGateway.cost.cadence",
+                "tooltip": "$SR.configurations.baseWithGateway.cost.tooltip"
             },
             "maintenance": {
                 "score": 3,
-                "tooltip": "Regional hub networks are usually considered business-critical with significant governance, especially with cross-premises connectivity."
+                "tooltip": "$SR.configurations.baseWithGateway.maintenance.tooltip"
             },
             "templateFileName": "baseWithGateway.json",
             "pivotValues": [
                 {
                     "pivotName": "hubNetwork",
                     "content": [
-                        "Same as \"Foundational deployment\""
+                        "$SR.configurations.baseWithGateway.pivotValues.hubNetwork.pointOne"
                     ]
                 },
                 {
                     "pivotName": "spokeNetworks",
                     "content": [
-                        "Same as \"Foundational deployment\""
+                        "$SR.configurations.baseWithGateway.pivotValues.spokeNetworks.pointOne"
                     ]
                 },
                 {
                     "pivotName": "azureFirewall",
                     "content": [
-                        "Same as \"Foundational deployment\""
+                        "$SR.configurations.baseWithGateway.pivotValues.azureFirewall.pointOne"
                     ]
                 },
                 {
                     "pivotName": "vpnGateway",
                     "content": [
-                        "Route-based, Generation 2 (VpnGw2AZ)",
-                        "Deployed across Availability Zones",
-                        "Azure Monitor logging"
+                        "$SR.configurations.baseWithGateway.pivotValues.vpnGateway.pointOne",
+                        "$SR.configurations.baseWithGateway.pivotValues.vpnGateway.pointTwo",
+                        "$SR.configurations.baseWithGateway.pivotValues.vpnGateway.pointThree"
                     ]
                 }
             ],
@@ -222,7 +222,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.baseWithGateway.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "FrameworkIcon",
@@ -237,52 +237,52 @@
         },
         {
             "id": "baseWithGatewayAndCompute",
-            "title": "Foundational deployment with VPN Gateway and an example workload",
-            "subTitle": "This builds upon the prior configuration and adds Virtual Machines that you can use to test hub-to-spoke, spoke-to-hub, and spoke-to-spoke communication.",
+            "title": "$SR.configurations.baseWithGatewayAndCompute.title",
+            "subTitle": "$SR.configurations.baseWithGatewayAndCompute.subTitle",
             "cost": {
                 "value": 1580,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+                "currency": "$SR.configurations.baseWithGatewayAndCompute.cost.currency",
+                "type": "$SR.configurations.baseWithGatewayAndCompute.cost.type",
+                "cadence": "$SR.configurations.baseWithGatewayAndCompute.cost.cadence",
+                "tooltip": "$SR.configurations.baseWithGatewayAndCompute.cost.tooltip"
             },
             "maintenance": {
                 "score": 3,
-                "tooltip": "Regional hub networks are usually considered business-critical with significant governance, especially with cross-premises connectivity and spoke resources like Virtual Machines."
+                "tooltip": "$SR.configurations.baseWithGatewayAndCompute.maintenance.tooltip"
             },
             "templateFileName": "baseWithGatewayAndCompute.json",
             "pivotValues": [
                 {
                     "pivotName": "hubNetwork",
                     "content": [
-                        "Same as \"Foundational deployment\""
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.hubNetwork.pointOne"
                     ]
                 },
                 {
                     "pivotName": "spokeNetworks",
                     "content": [
-                        "Same as \"Foundational deployment\""
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.spokeNetworks.pointOne"
                     ]
                 },
                 {
                     "pivotName": "azureFirewall",
                     "content": [
-                        "Same as \"Foundational deployment,\" plus:",
-                        "Firewall Policy rules to support example workload"
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.azureFirewall.pointOne",
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.azureFirewall.pointTwo"
                     ]
                 },
                 {
                     "pivotName": "vpnGateway",
                     "content": [
-                        "Same as \"Foundational deployment with VPN Gateway\""
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.vpnGateway.pointOne"
                     ]
                 },
                 {
                     "pivotName": "workload",
                     "content": [
-                        "One basic Linux & Windows Virtual Machine",
-                        "No public IPs; uses Azure Bastion for access",
-                        "Network Securty Groups to limit access"
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.workload.pointOne",
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.workload.pointTwo",
+                        "$SR.configurations.baseWithGatewayAndCompute.pivotValues.workload.pointThree"
                     ]
                 }
             ],
@@ -325,7 +325,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.baseWithGatewayAndCompute.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "FrameworkIcon",

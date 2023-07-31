@@ -94,7 +94,7 @@
             "title": "ArcBox Full",
             "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
             "cost": {
-                "value": "112",
+                "value": 112,
                 "score": 3,
                 "currency": "USD",
                 "type": "absolute",
@@ -251,7 +251,7 @@
             "title": "ArcBox for IT Pros",
             "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
             "cost": {
-                "value": "40",
+                "value": 40,
                 "score": 2,
                 "currency": "USD",
                 "type": "absolute",

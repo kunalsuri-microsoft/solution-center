@@ -1,0 +1,113 @@
+{
+    "overviewContent": "Hub-spoke is a fundamental networking topology for efficiently managing common connectivity & security requirements. A hub is a central network zone that controls and inspects egress and/or ingress traffic between zones: internet, cross-premises, and spokes.",
+    "pivots": {
+        "hubNetwork": "Hub network",
+        "spokeNetworks": "Spoke networks",
+        "workload": "Example workload"
+    },
+    "configurations": {
+        "base": {
+            "title": "Foundational deployment",
+            "subTitle": "A foundational deployment of the hub-spoke topology. It includes core networking components and leaves room to grow into more advanced configurations.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly",
+                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+            },
+            "maintenance": {
+                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+            },
+            "pivotValues": {
+                "hubNetwork": {
+                    "pointOne": "One regional, hub Virtual Network",
+                    "pointTwo": "Dedicated subnets for hub resources",
+                    "pointThree": "Network Security Groups"
+                },
+                "spokeNetworks": {
+                    "pointOne": "Two spoke Virtual Networks",
+                    "pointTwo": "Network Security Groups",
+                    "pointThree": "Bi-directional peering established to/from hub",
+                    "pointFour": "Egress traffic force-tunneled to hub Azure Firewall"
+                },
+                "azureFirewall": {
+                    "pointOne": "One regional Azure Firewall (Basic)",
+                    "pointTwo": "Multiple public IPs",
+                    "pointThree": "Deployed across Availability Zones",
+                    "pointFour": "Azure Monitor logging"
+                }
+            },
+            "associatedResources": {
+                "azureMonitor": "Azure Monitor"
+            }
+        },
+        "baseWithGateway": {
+            "title": "Foundational deployment with VPN Gateway for cross-premises connectivity",
+            "subTitle": "This builds upon the prior configuration with the addition of a VPN Gateway to support on-premises or cross-cloud connectivity.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly",
+                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+            },
+            "maintenance": {
+                "tooltip": "Regional hub networks are usually considered business-critical with significant governance, especially with cross-premises connectivity."
+            },
+            "pivotValues": {
+                "hubNetwork": {
+                    "pointOne": "Same as \"Foundational deployment\""
+                },
+                "spokeNetworks": {
+                    "pointOne": "Same as \"Foundational deployment\""
+                },
+                "azureFirewall": {
+                    "pointOne": "Same as \"Foundational deployment\""
+                },
+                "vpnGateway": {
+                    "pointOne": "Route-based, Generation 2 (VpnGw2AZ)",
+                    "pointTwo": "Deployed across Availability Zones",
+                    "pointThree": "Azure Monitor logging"
+                }
+            },
+            "associatedResources": {
+                "azureMonitor": "Azure Monitor"
+            }
+        },
+        "baseWithGatewayAndCompute": {
+            "title": "Foundational deployment with VPN Gateway and an example workload",
+            "subTitle": "This builds upon the prior configuration and adds Virtual Machines that you can use to test hub-to-spoke, spoke-to-hub, and spoke-to-spoke communication.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly",
+                "tooltip": "Example pricing is rough consideration. Your pricing will vary based on many factors."
+            },
+            "maintenance": {
+                "tooltip": "Regional hub networks are usually considered business-critical with significant governance, especially with cross-premises connectivity and spoke resources like Virtual Machines."
+            },
+            "pivotValues": {
+                "hubNetwork": {
+                    "pointOne": "Same as \"Foundational deployment\""
+                },
+                "spokeNetworks": {
+                    "pointOne": "Same as \"Foundational deployment\""
+                },
+                "azureFirewall": {
+                    "pointOne": "Same as \"Foundational deployment,\" plus:",
+                    "pointTwo": "Firewall Policy rules to support example workload"
+                },
+                "vpnGateway": {
+                    "pointOne": "Same as \"Foundational deployment with VPN Gateway\""
+                },
+                "workload": {
+                    "pointOne": "One basic Linux & Windows Virtual Machine",
+                    "pointTwo": "No public IPs; uses Azure Bastion for access",
+                    "pointThree": "Network Securty Groups to limit access"
+                }
+            },
+            "associatedResources": {
+                "azureMonitor": "Azure Monitor"
+            }
+        }
+    }
+}

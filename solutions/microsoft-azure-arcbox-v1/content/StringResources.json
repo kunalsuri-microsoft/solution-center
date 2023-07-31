@@ -1,0 +1,77 @@
+{
+    "overviewContent": "Ready to experience managing infrastructure with our hybrid cloud platform? ArcBox provides an easy-to-deploy sandbox for all things Azure Arc. It is completely self-contained within a single subscription and resource group, giving you room to train, demo, test, and explore with a pre-installed set of tools. Note: This is a 2-step deployment process. Please refer to Documentation tab.",
+    "associatedResources": {
+        "azurePolicy": "Azure Policy",
+        "defenderCloud": "Defender for Cloud",
+        "azureMonitor": "Azure Monitor"
+    },
+    "pivots": {
+        "arcServer": "Arc-enabled servers",
+        "arcK8s": "Arc-enabled Kubernetes",
+        "arcDataServices": "Arc-enabled data services"
+    },
+    "configurations": {
+        "full": {
+            "title": "ArcBox Full",
+            "subTitle": "Access all ArcBox resources, including Azure Arc-enabled servers, Kubernetes and data services.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "daily"
+            },
+            "pivotValues": {
+                "arcServer": {
+                    "pointOne": "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                    "pointTwo": "Includes Arc-enabled SQL Server running on a Windows VM.",
+                    "pointThree": "Enabled using native Azure virtual machines."
+
+                },
+                "arcK8s": {
+                    "pointOne": "Single node Rancher K3s cluster",
+                    "pointTwo": "3-node Cluster API Kubernetes cluster",
+                    "pointThree": "Includes Container Insights, and Microsoft Defender for Containers"
+                },
+                "arcDataServices": {
+                    "pointOne": "Azure Arc Data Controller",
+                    "pointTwo": "Azure Arc-enabled SQL Managed Instance",
+                    "pointThree": "Azure Arc-enabled PostgreSQL"
+                }
+            },
+            "associatedResources": {
+                "azurePolicy": "Azure Policy",
+                "defenderCloud": "Defender for Cloud",
+                "azureMonitor": "Azure Monitor",
+                "arcServer": "Arc-enabled server",
+                "arcSQLServer": "Arc-enabled SQL Server",
+                "arcKubernetes": "Arc-enabled Kubernetes",
+                "arcDataController": "Arc Data Controller",
+                "arcSQLManagedInstance": "Arc-enabled SQL Managed Instance",
+                "arcPostgreSQL": "Arc-enabled PostgreSQL"
+            }
+        },
+        "itPro": {
+            "title": "ArcBox for IT Pros",
+            "subTitle": "Limited to Azure Arc-enabled servers and SQL Server capabilities.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "daily"
+            },
+            "pivotValues": {
+                "arcServer": {
+                    "pointOne": "5 guest virtual machines connected as Arc-enabled servers using Hyper-V as a host.",
+                    "pointTwo": "Includes Arc-enabled SQL Server running on a Windows VM.",
+                    "pointThree": "Enabled using native Azure virtual machines."
+
+                }
+            },
+            "associatedResources": {
+                "azurePolicy": "Azure Policy",
+                "defenderCloud": "Defender for Cloud",
+                "azureMonitor": "Azure Monitor",
+                "arcServer": "Arc-enabled server",
+                "arcSQLServer": "Arc-enabled SQL Server"
+            }
+        }
+    }
+}

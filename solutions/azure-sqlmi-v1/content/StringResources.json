@@ -1,0 +1,89 @@
+{
+    "overviewContent": "This solution deploys a web frontend layer, private Virtual Network for frontend instances, Azure Key vault for handling secrets and supporting BYOK scenarios, Azure SQL Managed Instance with different tiers and configuration as per selected solution template.",
+    "associatedResources": {
+        "managedInstances": "Azure SQL Managed Instance"
+    },
+    "configurations": {
+        "base": {
+            "title": "Dev/Test instance",
+            "subTitle": "A starter solution for quick setup with low-scale.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmCompute": {
+                    "pointOne": "D4s v3 (4 CPU vCores)"
+                },
+                "miPivot": {
+                    "pointOne": "General Purpose", 
+                    "pointTwo": "4 CPU vCores", 
+                    "pointThree": "20 GB RAM, Standard Series", 
+                    "pointFour": "32 GB of disk space", 
+                    "pointFive": "LRS Backup Storage"
+                },
+                "akvPivot": {
+                    "pointOne": "Standard"
+                }
+            }
+        },
+        "smallMid": {
+            "title": "Small to Mid-Size",
+            "subTitle": "Small to Medium-sized production workload, that does not require the highest availability or very high number of concurrent users.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmCompute": {
+                    "pointOne": "D8s_v3 (8 CPU vCores)"
+                },
+                "miPivot": {
+                    "pointOne": "General Purpose", 
+                    "pointTwo": "8 CPU vCores", 
+                    "pointThree": "40 GB RAM, Standard Series", 
+                    "pointFour": "128 GB of disk space", 
+                    "pointFive": "GRS Backup Storage"
+                },
+                "akvPivot": {
+                    "pointOne": "Standard"
+                }
+            }
+        },
+        "large": {
+            "title": "Full Production Workload",
+            "subTitle": "This deployment will be provide a better configuration for more intensive full production workload with higher number of users and significantly improved response time, while providing Business Critical type high availability.",
+            "cost": {
+                "currency": "USD",
+                "type": "absolute",
+                "cadence": "monthly"
+            },
+            "maintenance": {
+                "tooltip": "The expected maintenance overhead associated with managing this configuration."
+            },
+            "pivotValues": {
+                "vmCompute": {
+                    "pointOne": "E16s_v3 (16 CPU vCores)"
+                },
+                "miPivot": {
+                    "pointOne": "Business Critical", 
+                    "pointTwo": "8 CPU vCores", 
+                    "pointThree": "56 GB RAM, Premium Series", 
+                    "pointFour": "512 GB of disk space", 
+                    "pointFive": "GRS Backup Storage"
+                },
+                "akvPivot": {
+                    "pointOne": "Standard"
+                }
+            }
+        }
+    }
+}
