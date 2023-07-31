@@ -1,0 +1,76 @@
+{
+    "overviewContent": "Containerization is an approach to software development in which an application or service, its dependencies, and its configuration (abstracted as deployment manifest files) are packaged together as a container image. The containerized application can be tested as a unit and deployed as a container image instance to the host operating system (OS).",
+    "associatedResources": {
+        "azureKubernetes": "Azure Kubernetes Service"
+    },
+    "pivots": {
+        "coreTech": "Core technology used",
+        "appTypes": "Application types"
+    },
+    "configurations": {
+        "containerInstances": {
+            "title": "Deploy with Azure Container Instances",
+            "subTitle": "Run serverless Docker containers in Azure with simplicity and speed.",
+            "cost": {
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "pivotValues": {
+                "coreTech": {
+                    "pointOne": "Deploy on-demand when you don't need a full container orchestration platform like Azure Kubernetes Service.",
+                    "pointTwo": "Provides a simplified platform for scenarios that can operate in isolated containers.",
+                    "pointThree": "Hypervisor-level security, guaranteeing your application is as isolated as on a VM."
+                },
+                "appTypes": {
+                    "pointOne": "Best for simple applications, task automation, and build jobs, where you don't need full container orchestration, automatic scaling, or coordinated application upgrades."
+                }
+            }
+        },
+        "appService": {
+            "title": "Deploy a Web App with App Service",
+            "subTitle": "Fully managed hosting for web applications including websites and web APIs.",
+            "cost": {
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "pivotValues": {
+                "coreTech": {
+                    "pointOne": "Use your favorite programming language along with your preferred dependencies.",
+                    "pointTwo": "Leverage built-in CI/CD with Docker Hub, Azure Container Registry, or Azure DevOps Services.",
+                    "pointThree": "Scale manually or automatically by applying pre-configured rules.",
+                    "pointFour": "Easily add a custom domain or SSL certificates."
+                },
+                "appTypes": {
+                    "pointOne": "Choose from an extensive list of application templates in the Azure Marketplace, such as WordPress, Joomla, and Drupal."
+                }
+            }
+        },
+        "aks": {
+            "title": "Deploy and manage with Azure Kubernetes Service (AKS)",
+            "subTitle": "Best for advanced customers with existing knowledge of Kubernetes orchestration.",
+            "cost": {
+                "type": "score",
+                "tooltip": "The relative cost to deploy this Azure service."
+            },
+            "maintenance": {
+                "tooltip": "The relative time to maintain your infrastructure post-deployment."
+            },
+            "pivotValues": {
+                "coreTech": {
+                    "pointOne": "Develop in your favorite language and run with ease on Windows or Linux.",
+                    "pointTwo": "Add full CI/CD pipeline to your AKS clusters with automated routine tasks.",
+                    "pointThree": "Gain control-plane telemetry, log aggregation, and container health, accessible in the Azure portal and automatically configured for AKS clusters."
+                },
+                "appTypes": {
+                    "pointOne": "Best for existing microservices-based architecture, streamlined by horizontal scaling, self-healing, load balancing, and secrets management."
+                }
+            }
+        }
+    }
+}
