@@ -1,13 +1,13 @@
 {
     "$schema": "../../definitions/configuration.metadata.schema.json",
-    "overviewContent": "A description of the solution.",
+    "overviewContent": "$SR.overviewContent",
     "documentationFileName": "starter-template-doc.md",
     "associatedResources": [],
     "pivots": [
         {
             "name": "hubNetwork",
             "type": "Custom",
-            "displayName": "Custom icon on left side",
+            "displayName": "$SR.pivots.hubNetwork",
             "azureResourceType": "Microsoft.Network/virtualNetworks",
             "icon": {
                 "iconNumber": 245,
@@ -18,18 +18,18 @@
     "configurations": [
         {
             "id": "base",
-            "title": "First configuration",
-            "subTitle": "Details on what gets deployed",
+            "title": "$SR.configurations.base.title",
+            "subTitle": "$SR.configurations.base.subTitle",
             "cost": {
                 "value": 150,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "currency": "$SR.configurations.base.cost.currency",
+                "type": "$SR.configurations.base.cost.type",
+                "cadence": "$SR.configurations.base.cost.cadence",
+                "tooltip": "$SR.configurations.base.cost.tooltip"
             },
             "maintenance": {
                 "score": 2,
-                "tooltip": "Example tooltip describing cost to maintain, customizable."
+                "tooltip": "$SR.configurations.base.maintenance.tooltip"
             },
             "templateFileName": "example-template.json",
             "supportsManualConfiguration": true,
@@ -41,9 +41,9 @@
                 {
                     "pivotName": "hubNetwork",
                     "content": [
-                        "Highlight on this feature",
-                        "Highlight on this feature",
-                        "Highlight on this feature"
+                        "$SR.configurations.base.pivotValues.hubNetwork",
+                        "$SR.configurations.base.pivotValues.hubNetwork",
+                        "$SR.configurations.base.pivotValues.hubNetwork"
                     ]
                 }
             ],
@@ -62,7 +62,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.base.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "FrameworkIcon",
@@ -73,18 +73,18 @@
         },
         {
             "id": "base2",
-            "title": "Second configuration",
-            "subTitle": "Details on what gets deployed",
+            "title": "$SR.configurations.base2.title",
+            "subTitle": "$SR.configurations.base2.subTitle",
             "cost": {
                 "value": 150,
-                "currency": "USD",
-                "type": "absolute",
-                "cadence": "monthly",
-                "tooltip": "Example tooltip describing the pricing, customizable."
+                "currency": "$SR.configurations.base2.cost.currency",
+                "type": "$SR.configurations.base2.cost.type",
+                "cadence": "$SR.configurations.base2.cost.cadence",
+                "tooltip": "$SR.configurations.base2.cost.tooltip"
             },
             "maintenance": {
                 "score": 2,
-                "tooltip": "Example tooltip describing cost to maintain, customizable."
+                "tooltip": "$SR.configurations.base2.maintenance.tooltip"
             },
             "supportsManualConfiguration": true,
             "manualConfigurationBlade": {
@@ -95,9 +95,9 @@
                 {
                     "pivotName": "hubNetwork",
                     "content": [
-                        "Highlight on this feature",
-                        "Highlight on this feature",
-                        "Highlight on this feature"
+                        "$SR.configurations.base2.pivotValues.hubNetwork",
+                        "$SR.configurations.base2.pivotValues.hubNetwork",
+                        "$SR.configurations.base2.pivotValues.hubNetwork"
                     ]
                 }
             ],
@@ -116,7 +116,7 @@
                 },
                 {
                     "resourceType": "",
-                    "displayName": "Azure Monitor",
+                    "displayName": "$SR.configurations.base2.associatedResources.azureMonitor",
                     "type": "Custom",
                     "icon": {
                         "iconType": "FrameworkIcon",

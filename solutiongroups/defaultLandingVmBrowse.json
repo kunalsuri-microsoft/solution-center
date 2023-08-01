@@ -1,18 +1,18 @@
 {
-    "title": "More virtual machines and related solutions",
-    "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
+    "title": "$SR.defaultLanding.title",
+    "description": "$SR.defaultLanding.description",
     "solutions": [
         "lamp-stack-vm-v1",
         "wordpress-azure-vm-v1"
     ],
-    "solutionsSectionTitle": "Discover the right solution for your needs",
-    "createLinksSectionTitle": "Hybrid virtual infrastructure",
-    "createLinksSectionDescription": "Azure Arc brings Azure features that are typically available only in the public cloud to private and on-premises workspaces, including those that are using non-Microsoft cloud services.",
+    "solutionsSectionTitle": "$SR.defaultLanding.solutionsSectionTitle",
+    "createLinksSectionTitle": "$SR.defaultLanding.createLinksSectionTitle",
+    "createLinksSectionDescription": "$SR.defaultLanding.createLinksSectionDescription",
     "createLinks": [
         {
             "id": "azure-arc-vm",
-            "title": "Azure Arc virtual machine",
-            "description": "Create a new Azure Arc virtual machine in one of your non-Azure environments (VMware, Azure Stack HCI, SCVMM)",
+            "title": "$SR.defaultLanding.createLinks.azureArcVM.title",
+            "description": "$SR.defaultLanding,createLinks.azureArcVM.description",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
@@ -25,8 +25,8 @@
         },
         {
             "id": "azure-avs-vm",
-            "title": "Azure VMware Solution virtual machine",
-            "description": "Create a VMware virtual machine hosted by Azure",
+            "title": "$SR.defaultLanding.createLinks.azureAvsVM.title",
+            "description": "$SR.defaultLanding,createLinks.azureAvsVM.description",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "AvsVm"
@@ -41,8 +41,8 @@
         },
         {
             "id": "azure-arc-servers",
-            "title": "Azure Arc-enabled server",
-            "description": "Manage Windows and Linux physical servers and virtual machines hosted outside of Azure",
+            "title": "$SR.defaultLanding.createLinks.azureArcServers.title",
+            "description": "$SR.defaultLanding,createLinks.azureArcServers.description",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcServer"

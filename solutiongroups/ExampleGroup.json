@@ -1,6 +1,6 @@
 {
-    "title": "More VMs and compute solutions",
-    "description": "These solutions allow you to deploy and manage Azure and open-source services and software for common compute projects all in a single location.",
+    "title": "$SR.example.title",
+    "description": "$SR.example.description",
     "solutions": [
         "microsoft-azure-arcbox-v1",
         "microsoft-azure-confidential-compute-v1",

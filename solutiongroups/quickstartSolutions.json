@@ -1,6 +1,6 @@
 {
-    "title": "QuickStart solutions",
-    "description": "Learn about popular Azure services and create your first Azure project.",
+    "title": "$SR.quickstart.title",
+    "description": "$SR.quickstart.description",
     "solutions": [
         "quickstart-create-a-webapp",
         "quickstart-deploy-a-vm",
