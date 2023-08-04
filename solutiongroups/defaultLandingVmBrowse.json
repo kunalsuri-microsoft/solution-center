@@ -12,7 +12,7 @@
         {
             "id": "azure-arc-vm",
             "title": "$SR.defaultLanding.createLinks.azureArcVM.title",
-            "description": "$SR.defaultLanding,createLinks.azureArcVM.description",
+            "description": "$SR.defaultLanding.createLinks.azureArcVM.description",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcVm"
@@ -26,7 +26,7 @@
         {
             "id": "azure-avs-vm",
             "title": "$SR.defaultLanding.createLinks.azureAvsVM.title",
-            "description": "$SR.defaultLanding,createLinks.azureAvsVM.description",
+            "description": "$SR.defaultLanding.createLinks.azureAvsVM.description",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "AvsVm"
@@ -42,7 +42,7 @@
         {
             "id": "azure-arc-servers",
             "title": "$SR.defaultLanding.createLinks.azureArcServers.title",
-            "description": "$SR.defaultLanding,createLinks.azureArcServers.description",
+            "description": "$SR.defaultLanding.createLinks.azureArcServers.description",
             "icon": {
                 "iconType": "CustomIcon",
                 "iconFileName": "ArcServer"
